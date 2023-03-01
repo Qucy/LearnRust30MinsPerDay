@@ -17,10 +17,13 @@ $ rustup update
 To uninstall Rust and rustup, run the following uninstall script from your shell:
 $ rustup self uninstall
 
-
 ### Your first rust programe
 Create a file named main.rs and input below function. Using command rustc main.rs to compile the file first.
 Then use command ./main.rs to run the program and you should see Hello world has been print out in the console.
+
+### Something need to be noticed
+- There is a '!' after println which indicates this is not a function is a Rust Macro
+- And unlike Python, similar to Java there is a semicolon after each line
 
 '''
 fn main() {
