@@ -1,0 +1,29 @@
+## Installation
+
+### Installing rustup on Linux or macOS
+
+'''
+$ curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
+'''
+
+Once you saw 'Rust is installed now. Great!' means you Rust has been successfully installed
+
+Can use command rustc --version to check your current version, you should see something like this -> rustc 1.67.1 (d5a82bbd2 2023-02-07)
+
+### Updating and Uninstalling
+Once Rust is installed via rustup, updating to a newly released version is easy. From your shell, run the following update script:
+$ rustup update
+
+To uninstall Rust and rustup, run the following uninstall script from your shell:
+$ rustup self uninstall
+
+
+### Your first rust programe
+
+'''
+fn main() {
+    println!("Hello world");
+}
+'''
+
+
