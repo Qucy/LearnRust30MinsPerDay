@@ -2,9 +2,7 @@
 
 ### Installing rustup on Linux or macOS
 
-'''
-$ curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
-'''
+`--proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh`
 
 Once you saw 'Rust is installed now. Great!' means you Rust has been successfully installed
 
@@ -25,11 +23,11 @@ Then use command ./main.rs to run the program and you should see Hello world has
 - There is a '!' after println which indicates this is not a function is a Rust Macro
 - And unlike Python, similar to Java there is a semicolon after each line
 
-'''
+`
 fn main() {
     println!("Hello world");
 }
-'''
+`
 
 ### Hello Cargo
 Cargo is Rust’s build system and package manager. Most Rustaceans use this tool to manage their Rust projects because Cargo handles a lot of tasks for you, such as building your code, downloading the libraries your code depends on, and building those libraries. (We call the libraries that your code needs dependencies.)
@@ -40,7 +38,6 @@ Use -> cargo build to build & compile your Rust programe, file will be build und
 Use -> cargo run to complie and run your project in one go
 Use -> cargo check to check your code, make sure it can complies(won't produce any executable file)
 Use -> cargo build --release to build a released version binary executable file
-
 
 
 
