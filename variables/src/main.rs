@@ -49,4 +49,99 @@ fn main() {
     let arr_a: [i32; 5] = [1, 2, 3, 4, 5];
     let arr_b = [3; 5];
     println!("{}, {}", arr_a[0], arr_b[2]);
+
+    // ======================= rust ownership =======================
+    // string
+    let mut s = String::from("Hello");
+    s.push_str(", world!");
+    println!("{}", s); // will drop memory when out of scope
+
+    // integer
+    let x = 5;
+    let y = x;
+    println!("x = {}, y = {}", x, y); // push 2 value to stack
+
+    // String
+    let s1 = String::from("Hello");
+    let s2 = s1;
+    // println!("{}", s1); // error, s1 is moved to s2
+
+    // clone
+    let s1 = String::from("Hello");
+    let s2 = s1.clone();
+    println!("s1 = {}, s2 = {}", s1, s2);
+
+    // ======================= rust ownership =======================
+    // function
+    let s = String::from("Hello");
+    takes_ownership(s);
+
+    let x = 5;
+    makes_copy(x);
+
+    // return value
+    let s1 = gives_ownership();
+    let s2 = String::from("Hello");
+    let s3 = takes_and_gives_back(s2);
+
+    // ======================= rust ownership =======================
+    // reference
+    let s1 = String::from("Hello");
+    let len = calculate_length(&s1);
+    println!("The length of '{}' is {}", s1, len);
+
+    // mutable reference
+    let mut s = String::from("Hello");
+    change(&mut s);
+    println!("{}", s);
+
+    // ======================= rust ownership =======================
+    // slice
+    let s = String::from("Hello world");
+    let hello = &s[0..5];
+    let world = &s[6..11];
+    println!("{}, {}", hello, world);
+
+    // ======================= rust ownership =======================
+    // struct
+    struct User {
+        username: String,
+        email: String,
+        sign_in_count: u64,
+        active: bool,
+    }
+
+    let user1 = User {
+        username: String::from("user1"),
+        email: String::from("32@qq.com"),
+        sign_in_count: 1,
+        active: true,
+    };
+
+    println!("{}", user1.username);
+}
+
+fn takes_ownership(some_string: String) {
+    println!("{}", some_string);
+}
+
+fn makes_copy(some_integer: i32) {
+    println!("{}", some_integer);
+}
+
+fn gives_ownership() -> String {
+    let some_string = String::from("Hello");
+    some_string
+}
+
+fn takes_and_gives_back(a_string: String) -> String {
+    a_string
+}
+
+fn calculate_length(s: &String) -> usize {
+    s.len()
+}
+
+fn change(s: &mut String) {
+    s.push_str(", world!");
 }
