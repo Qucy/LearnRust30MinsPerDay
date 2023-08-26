@@ -69,31 +69,31 @@ fn main() {
     // clone
     let s1 = String::from("Hello");
     let s2 = s1.clone();
-    println!("s1 = {}, s2 = {}", s1, s2);
+    println!("s1 = {}, s2 = {}", s1, s2); // s1 and s2 are both valid
 
     // ======================= rust ownership =======================
     // function
     let s = String::from("Hello");
-    takes_ownership(s);
+    takes_ownership(s); // s's value move to function, s is invalid, because String is Drop trait
 
     let x = 5;
-    makes_copy(x);
+    makes_copy(x); // x's value move to function, x is still valid, because i32 is Copy trait
 
     // return value
     let s1 = gives_ownership();
     let s2 = String::from("Hello");
-    let s3 = takes_and_gives_back(s2);
+    let s3 = takes_and_gives_back(s2); // s2's value move to function, s2 is invalid, s3's value move to s2
 
     // ======================= rust ownership =======================
     // reference
     let s1 = String::from("Hello");
-    let len = calculate_length(&s1);
+    let len = calculate_length(&s1); // s1's value is borrowed, s1 is still valid
     println!("The length of '{}' is {}", s1, len);
 
     // mutable reference
     let mut s = String::from("Hello");
-    change(&mut s);
-    println!("{}", s);
+    change(&mut s); // s's value is borrowed, s is still valid
+    println!("After borrowed: {}", s);
 
     // ======================= rust ownership =======================
     // slice
