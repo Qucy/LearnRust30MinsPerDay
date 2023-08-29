@@ -92,14 +92,17 @@ fn main() {
 
     // mutable reference
     let mut s = String::from("Hello");
+    let mut ss = &mut s;
+    // let mut sss = &mut s; Compile error, can only have one mutable reference but can have many immutable reference
     change(&mut s); // s's value is borrowed, s is still valid
     println!("After borrowed: {}", s);
 
     // ======================= rust ownership =======================
     // slice
     let s = String::from("Hello world");
-    let hello = &s[0..5];
-    let world = &s[6..11];
+    let hello = &s[0..5]; // can ommited 0 &s[..5]
+    let world = &s[6..11]; // can ommited 11 &s[6..]
+    let whole = &s[..]; // whole string
     println!("{}, {}", hello, world);
 
     // ======================= rust ownership =======================
