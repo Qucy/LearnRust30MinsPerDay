@@ -122,6 +122,36 @@ fn main() {
     };
 
     println!("{}", user1.username);
+
+    // mutable struct
+    let mut user2 = User {
+        username: String::from("user2"),
+        email: String::from("32@qq.com"),
+        sign_in_count: 1,
+        active: true,
+    };
+
+    user2.email = String::from("33@qq.com");
+    println!("{}", user2.email);
+
+    // struct update syntax
+    let user3 = User {
+        username: String::from("user3"),
+        email: String::from("qq.com"),
+        ..user2
+    };
+
+    println!("{}", user3.email);
+
+    // tuple struct
+    struct Color(i32, i32, i32);
+    struct Point(i32, i32, i32);
+
+    let black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+
+    // unit-like struct - struct without any fields, used for generics
+    struct UnitLikeStruct {}
 }
 
 fn takes_ownership(some_string: String) {
