@@ -93,3 +93,116 @@ fn main() {
 fn area(rectangle: &Rectangle) -> u32 {
     rectangle.width * rectangle.height
 }
+
+// Below code demostates how to use enum in Rust
+// enum implementation
+// enum IpAddrKind {
+//     V4,
+//     V6,
+// }
+
+// struct implementation
+// struct IpAddr {
+//     kind: IpAddrKind,
+//     address: String,
+// }
+
+// enum implementation
+// enum IpAddr {
+//     V4(String),
+//     V6(String),
+// }
+
+// enum implementation
+// enum IpAddr {
+//     V4(u8, u8, u8, u8),
+//     V6(String),
+// }
+
+// enum implementation
+// enum IpAddr {
+//     V4(Ipv4Addr),
+//     V6(Ipv6Addr),
+// }
+
+// enum implementation
+// enum Message {
+//     Quit,
+//     Move { x: i32, y: i32 },
+//     Write(String),
+//     ChangeColor(i32, i32, i32),
+// }
+
+// enum implementation
+// impl Message {
+//     fn call(&self) {
+//         // method body would be defined here
+//     }
+// }
+
+// enum implementation
+// struct QuitMessage; // unit struct
+// struct MoveMessage {
+//     x: i32,
+//     y: i32,
+// }
+
+// struct implementation
+// struct WriteMessage(String); // tuple struct
+// struct ChangeColorMessage(i32, i32, i32); // tuple struct
+
+// enum implementation
+// enum Message {
+//     Quit,
+//     Move { x: i32, y: i32 },
+//     Write(String),
+//     ChangeColor(i32, i32, i32),
+// }
+
+// enum implementation
+// impl Message {
+//     fn call(&self) {
+//         // method body would be defined here
+//     }
+// }
+
+// enum implementation
+// enum Option<T> {
+//     Some(T),
+//     None,
+// }
+
+// enum implementation
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
+
+// enum implementation
+// use std::io::Error;
+// use std::io::Read;
+// fn read_username_from_file() -> Result<String, Error> {
+//     let f = File::open("hello.txt");
+
+//     let mut f = match f {
+//         Ok(file) => file,
+//         Err(e) => return Err(e),
+//     };
+
+//     let mut s = String::new();
+
+//     match f.read_to_string(&mut s) {
+//         Ok(_) => Ok(s),
+//         Err(e) => Err(e),
+//     }
+// }
+
+// enum implementation
+// use std::io::Error;
+// use std::io::Read;
+// fn read_username_from_file() -> Result<String, Error> {
+//     let mut f = File::open("hello.txt")?;
+//     let mut s = String::new();
+//     f.read_to_string(&mut s)?;
+//     Ok(s)
+// }
